@@ -4,12 +4,17 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-import json from './json/childrensbooks.json';
+import childrensbooks from './json/childrensbooks.json';
 
 new Vue({
   data(){
     return {
-      myBookDB: json
+      bookDB: childrensbooks.books
+    }
+  },
+  methods: {
+    getBook(id){
+      return this.bookDB.find(book => book.id == id)
     }
   },
   router,
