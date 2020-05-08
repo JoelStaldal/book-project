@@ -20,7 +20,7 @@ export default {
 
 <style scoped>
 .book-thumb {
-    margin: 1rem;
+    margin: 0.5rem;
     height: 13rem;
     width: 10rem;
     position:relative;
@@ -36,7 +36,7 @@ export default {
 .book-data-container {
     color: white;
     text-align: left;
-    margin-left: 0.8rem;
+    margin-left: 1rem;
     position: absolute;
     bottom: 0;
     margin-bottom: 0.5rem;

@@ -53,7 +53,7 @@ export default {
   margin: 0 auto;
   max-width: 900px;
   display: flex;
-  justify-content: column;
+  align-items: center;
   background: rgb(31,31,31);
   color: white;
 }

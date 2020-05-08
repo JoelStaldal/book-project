@@ -26,7 +26,6 @@ export default {
     width: 20rem;
     position:relative;
     border-radius: 6px;
-
 }
 .cover-back {
     position: absolute;
@@ -38,7 +37,7 @@ export default {
 .book-data-container {
     color: white;
     text-align: left;
-    margin-left: 1.6rem;
+    margin-left: 2rem;
     position: absolute;
     bottom: 0;
     margin-bottom: 1rem;
@@ -46,6 +45,10 @@ export default {
 h1, h4 {
     color: black;
     margin: 0;
+}
+
+h1 {
+    font-size: 2rem;
 }
   
 </style>
