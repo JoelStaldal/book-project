@@ -2,14 +2,15 @@
   <div class="bookshelf">
     <h1>8 Classic Childrens books</h1>
     <div class="books-container">
-      <BookThumb 
-      v-for="book in bookList"
-      v-bind:key="book.id"
-      v-bind:id="book.id"
-      v-bind:title="book.title"
-      v-bind:author="book.author"
-      v-bind:color="book.color"
-      />
+      <router-link
+        v-for="book in bookList"
+        v-bind:key="book.id"
+        v-bind:to="'/book/' + book.id"
+      ><BookThumb  
+        v-bind:title="book.title"
+        v-bind:author="book.author"
+        v-bind:color="book.color"
+        v-bind:book="book"/></router-link>
     </div>
   </div>
 </template>

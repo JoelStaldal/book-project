@@ -2,7 +2,7 @@
   <div class="book">
     <div class="info-container">
       <div class="largeBook">
-        <button class="back-btn"></button>
+        <router-link v-bind:to="'/bookshelf'"><button class="back-btn"></button></router-link>
       <BookLarge
         v-bind:title="book.title"
         v-bind:author="book.author"
@@ -49,19 +49,23 @@ export default {
 </script>
 <style scoped>
 .info-container {
+  padding: 1rem;
   margin: 0 auto;
   max-width: 900px;
-  border: 1px solid black;
   display: flex;
   justify-content: column;
   background: rgb(31,31,31);
   color: white;
 }
 .largeBook {
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+a {
+  height: 2rem;
+  width: 2rem;
+  margin-left: 2rem;
 }
 .back-btn {
   cursor: pointer;
@@ -72,16 +76,13 @@ export default {
   background-size: cover;
   background-image: url('../img/arrow-back-circle-outline.svg');
   background-color: rgb(127,127,127);
-  margin-left: 2rem;
 }
 .book-info {
-  border: 1px solid black;
   padding: 2rem;
   text-align: left;
 }
 .info-box {
   background: rgb(41,41,41);
-  border: 1px solid black;
   height: 5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -98,5 +99,12 @@ export default {
   font-size: 0.9rem;
   border-radius: 5px;
   font-weight: bold;
+}
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+h3 {
+  margin: 0;
 }
 </style>

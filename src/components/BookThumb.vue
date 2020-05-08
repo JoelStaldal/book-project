@@ -11,7 +11,6 @@
 export default {
     name: "BookThumb",
     props: {
-        id: Number,
         title: String,
         author: String,
         color: String
