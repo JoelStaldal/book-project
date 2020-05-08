@@ -14,10 +14,10 @@
         <h3>{{book.author}}</h3>
         <p>{{book.plot}}</p>
         <div class="info-box">
-          <p>Audience: {{book.audience}}</p>
-          <p>First published: {{book.year}}</p>
-          <p>Pages: {{book.pages}}</p>
-          <p>Publisher: {{book.publisher}}</p>
+          <p><strong>Audience: </strong>{{book.audience}}</p>
+          <p><strong>First published: </strong>{{book.year}}</p>
+          <p><strong>Pages: </strong>{{book.pages}}</p>
+          <p><strong>Publisher: </strong>{{book.publisher}}</p>
         </div>
         <button class="read-it-btn">Oh, I want to read it!</button>
       </article>
@@ -100,6 +100,7 @@ a {
   margin: 0;
   margin-left: 1rem;
 }
+
 .read-it-btn {
   margin-top: 1rem;
   height: 3rem;
