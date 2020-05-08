@@ -9,7 +9,6 @@
       v-bind:title="book.title"
       v-bind:author="book.author"
       v-bind:color="book.color"
-      v-on:click="someMethod"
       />
     </div>
   </div>
@@ -29,9 +28,7 @@ export default {
     }
   },
   methods: {
-    someMethod(){
-      console.log("Här")
-    }
+
   }
 }
 

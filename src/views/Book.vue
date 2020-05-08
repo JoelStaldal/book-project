@@ -2,7 +2,7 @@
   <div class="book">
     <div class="info-container">
       <div class="largeBook">
-        <button class="back-btn">Go back</button>
+        <button class="back-btn"></button>
       <BookLarge
         v-bind:title="book.title"
         v-bind:author="book.author"
@@ -59,6 +59,20 @@ export default {
 }
 .largeBook {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.back-btn {
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  border: rgb(127,127,127);
+  background-size: cover;
+  background-image: url('../img/arrow-back-circle-outline.svg');
+  background-color: rgb(127,127,127);
+  margin-left: 2rem;
 }
 .book-info {
   border: 1px solid black;

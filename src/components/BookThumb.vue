@@ -37,14 +37,17 @@ export default {
 .book-data-container {
     color: white;
     text-align: left;
-    margin-top: 9rem;
     margin-left: 0.8rem;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 0.5rem;
 }
 h2 {
     font-size: 1rem;
-    margin-bottom: -0.9rem;
+    margin: 0;
 }
 p {
     font-size: 0.7rem;
+    margin: 0;
 }    
 </style>

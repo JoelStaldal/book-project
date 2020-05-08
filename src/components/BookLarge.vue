@@ -39,9 +39,13 @@ export default {
     color: white;
     text-align: left;
     margin-left: 1.6rem;
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
 }
 h1, h4 {
     color: black;
+    margin: 0;
 }
   
 </style>
