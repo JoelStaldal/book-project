@@ -1,13 +1,13 @@
 <template>
   <div class="book">
+    <nav>
+      <router-link v-bind:to="'/bookshelf'">
+        <button class="back-btn"></button>
+      </router-link>
+    </nav>
     <div class="info-container">
-      <div class="largeBook">
-        <router-link v-bind:to="'/bookshelf'"><button class="back-btn"></button></router-link>
-      <BookLarge
-        v-bind:title="book.title"
-        v-bind:author="book.author"
-        v-bind:color="book.color"
-      />
+      <div class="book-container">
+        <BookLarge v-bind:title="book.title" v-bind:author="book.author" v-bind:color="book.color" />
       </div>
       <article class="book-info">
         <h1>{{book.title}}</h1>
@@ -17,7 +17,7 @@
           <p>Audience: {{book.audience}}</p>
           <p>First published: {{book.year}}</p>
           <p>Pages: {{book.pages}}</p>
-          <p>Publisher: {{book.publisher}}</p> 
+          <p>Publisher: {{book.publisher}}</p>
         </div>
         <button class="read-it-btn">Oh, I want to read it!</button>
       </article>
@@ -25,9 +25,8 @@
   </div>
 </template>
 <script>
-
 // import BookThumb from '../components/BookThumb'
-import BookLarge from '../components/BookLarge'
+import BookLarge from "../components/BookLarge";
 
 export default {
   name: "Book",
@@ -35,29 +34,38 @@ export default {
     // BookThumb: BookThumb
     BookLarge: BookLarge
   },
-  data(){
+  data() {
     return {
       bookList: this.$root.bookDB
-    }
+    };
   },
   computed: {
-    book(){
-      return this.$root.getBook(this.$route.params.myParam)
+    book() {
+      return this.$root.getBook(this.$route.params.myParam);
     }
   }
-}
+};
 </script>
 <style scoped>
+nav {
+  margin: 0 auto;
+  max-width: 900px;
+  background: rgb(31, 31, 31);
+  padding: 1rem;
+  padding-bottom: 0;
+  text-align: left;
+}
 .info-container {
   padding: 1rem;
+  padding-top: 0;
   margin: 0 auto;
   max-width: 900px;
   display: flex;
   align-items: center;
-  background: rgb(31,31,31);
+  background: rgb(31, 31, 31);
   color: white;
 }
-.largeBook {
+.book-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,17 +80,17 @@ a {
   height: 2rem;
   width: 2rem;
   border-radius: 50%;
-  border: rgb(127,127,127);
+  border: rgb(127, 127, 127);
   background-size: cover;
-  background-image: url('../img/arrow-back-circle-outline.svg');
-  background-color: rgb(127,127,127);
+  background-image: url("../img/arrow-back-circle-outline.svg");
+  background-color: rgb(127, 127, 127);
 }
 .book-info {
   padding: 2rem;
   text-align: left;
 }
 .info-box {
-  background: rgb(41,41,41);
+  background: rgb(41, 41, 41);
   height: 5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
