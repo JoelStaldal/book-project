@@ -4,7 +4,7 @@ import router from './router'
 
 Vue.config.productionTip = false
 
-import childrensbooks from './json/childrensbooks.json';
+import childrensbooks from './assets/childrensbooks.json';
 
 new Vue({
   data(){

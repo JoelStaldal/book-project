@@ -1,7 +1,7 @@
 <template>
   <div class="book">
     <nav>
-      <router-link v-bind:to="'/bookshelf'">
+      <router-link v-bind:to="'/'">
         <button class="back-btn"></button>
       </router-link>
     </nav>
