@@ -5,31 +5,32 @@
       <router-link
         v-for="book in bookList"
         v-bind:key="book.id"
-        v-bind:to="'/book/' + book.id"
-      ><BookThumb  
-        v-bind:title="book.title"
-        v-bind:author="book.author"
-        v-bind:color="book.color"
-        v-bind:book="book"/></router-link>
+        v-bind:to="'/book/' + book.id">
+        <Book 
+        v-bind:book="book"
+        v-bind:class="{bookThumb: isActive}"/>
+        </router-link>
     </div>
   </div>
 </template>
 
 <script>
-import BookThumb from "../components/BookThumb"
+import Book from "../components/Book"
 
 export default {
   name: 'BookShelf',
   components: {
-    BookThumb: BookThumb
+    Book
   },
   data(){
     return {
-      bookList: this.$root.bookDB
+      isActive: true
     }
   },
-  methods: {
-
+  computed: {
+    bookList(){
+      return this.$store.state.bookDB
+    }
   }
 }
 
@@ -37,9 +38,22 @@ export default {
 <style scoped>
 .books-container {
   margin: 0 auto;
-  max-width: 800px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  max-width: 600px;
+  display: grid;
+  grid-template-areas: 
+  "BOOK BOOK BOOK BOOK"
+  "BOOK BOOK BOOK BOOK";
+}
+.Book {
+  grid-area: BOOK;
+}
+.bookThumb {
+  color: white;
+  width: 8rem;
+  height: 10rem;
+  border-radius: 3px;
+}
+a {
+  text-decoration: none;
 }
 </style>

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import BookShelf from '../views/BookShelf.vue'
-import Book from '../views/Book.vue'
+import BookInfo from '../views/BookInfo.vue'
 
 Vue.use(VueRouter)
 
@@ -13,8 +13,8 @@ Vue.use(VueRouter)
   },
   {
     path: '/book/:myParam',
-    name: 'Book',
-    component: Book
+    name: 'BookInfo',
+    component: BookInfo
   }
 ]
 

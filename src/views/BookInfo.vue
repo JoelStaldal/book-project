@@ -7,7 +7,7 @@
     </nav>
     <div class="info-container">
       <div class="book-container">
-        <BookLarge v-bind:title="book.title" v-bind:author="book.author" v-bind:color="book.color" />
+        <Book v-bind:book="book" v-bind:class="{largeBook: isActive}"/>
       </div>
       <article class="book-info">
         <h1>{{book.title}}</h1>
@@ -25,23 +25,25 @@
   </div>
 </template>
 <script>
-// import BookThumb from '../components/BookThumb'
-import BookLarge from "../components/BookLarge";
+
+import Book from "../components/Book";
 
 export default {
-  name: "Book",
+  name: "BookInfo",
   components: {
-    // BookThumb: BookThumb
-    BookLarge: BookLarge
+    Book
   },
-  data() {
+  data(){
     return {
-      bookList: this.$root.bookDB
-    };
+      isActive: true
+    }
   },
   computed: {
+    bookList(){
+      return this.$store.state.bookDB
+    },
     book() {
-      return this.$root.getBook(this.$route.params.myParam);
+      return this.$store.getters.getBookById(this.$route.params.myParam)
     }
   }
 };
@@ -115,5 +117,10 @@ h1 {
 }
 h3 {
   margin: 0;
+}
+.largeBook {
+  color: black;
+  height: 20rem;
+    width: 16rem;
 }
 </style>
